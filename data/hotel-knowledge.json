@@ -1,0 +1,41 @@
+{
+  "hotel": {
+    "name": "Villa Neretvanka",
+    "type": "Boutique hotel",
+    "location": "Neretva valley, Croatia",
+    "rooms": {
+      "total": 12,
+      "types": [
+        { "name": "Standard", "price_eur": 80 },
+        { "name": "Superior", "price_eur": 120 },
+        { "name": "Deluxe", "price_eur": 160 },
+        { "name": "Suite", "price_eur": 220 }
+      ]
+    },
+    "amenities": [
+      "Breakfast included",
+      "Free parking",
+      "Free WiFi",
+      "Outdoor pool",
+      "Restaurant with local cuisine"
+    ],
+    "check_in": "14:00",
+    "check_out": "10:00",
+    "nearby": [
+      { "place": "Kravice Waterfalls", "distance": "30 min" },
+      { "place": "Mostar", "distance": "45 min" },
+      { "place": "Dubrovnik", "distance": "1.5 h" },
+      { "place": "Ston", "distance": "40 min" }
+    ],
+    "contact": {
+      "phone": "+385 20 123 456",
+      "email": "info@villa-neretvanka.hr"
+    },
+    "pet_policy": "Pet-friendly for small dogs up to 10kg",
+    "season": "June-September",
+    "preseason_discount": "20%"
+  },
+  "booking": {
+    "url": "https://villa-neretvanka.hr/booking"
+  }
+}
