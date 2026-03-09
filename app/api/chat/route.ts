@@ -1,21 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
-import hotelData from "@/data/hotel-knowledge.json";
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
-const SYSTEM_PROMPT = `Ti si ljubazni AI recepcioner hotela "${hotelData.hotel.name}" — boutique hotel u dolini Neretve, Hrvatska.
+const SYSTEM_PROMPT = `Ti si ljubazni AI recepcioner hotela "Villa Neretvanka" — boutique hotel u dolini Neretve, Hrvatska.
 
 PODACI O HOTELU:
-- Lokacija: ${hotelData.hotel.location}
-- Sobe (${hotelData.hotel.rooms.total} ukupno): ${hotelData.hotel.rooms.types.map(r => `${r.name} €${r.price_eur}/noć`).join(", ")}
-- Sve cijene uključuju: ${hotelData.hotel.amenities.join(", ")}
-- Check-in: ${hotelData.hotel.check_in}, Check-out: ${hotelData.hotel.check_out}
-- Blizina: ${hotelData.hotel.nearby.map(n => `${n.place} (${n.distance})`).join(", ")}
-- Kontakt: ${hotelData.hotel.contact.phone}, ${hotelData.hotel.contact.email}
-- Kućni ljubimci: ${hotelData.hotel.pet_policy}
-- Sezona: ${hotelData.hotel.season}, predsezone popust: ${hotelData.hotel.preseason_discount}
-- Booking: ${hotelData.booking.url}
+- Lokacija: Neretva valley, Croatia
+- Sobe (12 ukupno): Standard €80/noć, Superior €120/noć, Deluxe €160/noć, Suite €220/noć
+- Sve cijene uključuju: doručak, besplatan parking, WiFi, pristup bazenu, restoran s lokalnom kuhinjom
+- Check-in: 14:00, Check-out: 10:00
+- Blizina: Kravice vodopadi (30 min), Mostar (45 min), Dubrovnik (1.5h), Ston (40 min)
+- Kontakt: +385 20 123 456, info@villa-neretvanka.hr
+- Kućni ljubimci: dozvoljeni mali psi do 10kg
+- Sezona: lipanj-rujan, predsezone popust 20%
+- Booking: https://villa-neretvanka.hr/booking
 
 PRAVILA:
 1. Detektiraj jezik korisnika i odgovaraj na istom jeziku (HR, EN, DE, IT)
@@ -49,8 +48,9 @@ export async function POST(req: NextRequest) {
     });
   } catch (error: unknown) {
     console.error("Chat API error:", error);
+    const msg = error instanceof Error ? error.message : "Unknown error";
     return NextResponse.json(
-      { error: "Greška u komunikaciji. Pokušajte ponovno." },
+      { error: `Greška: ${msg}` },
       { status: 500 }
     );
   }
