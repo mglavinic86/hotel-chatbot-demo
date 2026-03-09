@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import OpenAI from "openai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
 
 const SYSTEM_PROMPT = `Ti si ljubazni AI recepcioner hotela "Villa Neretvanka" — boutique hotel u dolini Neretve, Hrvatska.
 
@@ -36,16 +36,24 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
-      messages: [{ role: "system", content: SYSTEM_PROMPT }, ...messages],
-      max_tokens: 300,
-      temperature: 0.7,
+    const model = genAI.getGenerativeModel({ 
+      model: "gemini-2.0-flash",
+      systemInstruction: SYSTEM_PROMPT,
     });
 
-    return NextResponse.json({
-      message: completion.choices[0].message.content,
-    });
+    // Convert messages to Gemini format
+    const history = messages.slice(0, -1).map((m: { role: string; content: string }) => ({
+      role: m.role === "assistant" ? "model" : "user",
+      parts: [{ text: m.content }],
+    }));
+
+    const lastMessage = messages[messages.length - 1].content;
+
+    const chat = model.startChat({ history });
+    const result = await chat.sendMessage(lastMessage);
+    const response = result.response.text();
+
+    return NextResponse.json({ message: response });
   } catch (error: unknown) {
     console.error("Chat API error:", error);
     const msg = error instanceof Error ? error.message : "Unknown error";
