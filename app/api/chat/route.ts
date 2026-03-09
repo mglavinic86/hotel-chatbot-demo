@@ -41,13 +41,20 @@ export async function POST(req: NextRequest) {
       systemInstruction: SYSTEM_PROMPT,
     });
 
-    // Convert messages to Gemini format
-    const history = messages.slice(0, -1).map((m: { role: string; content: string }) => ({
+    // Convert messages to Gemini format, skip leading assistant messages
+    const allMsgs = messages.map((m: { role: string; content: string }) => ({
       role: m.role === "assistant" ? "model" : "user",
       parts: [{ text: m.content }],
     }));
-
-    const lastMessage = messages[messages.length - 1].content;
+    
+    // Gemini requires first message to be 'user' — drop leading model messages
+    const firstUserIdx = allMsgs.findIndex((m: { role: string }) => m.role === "user");
+    if (firstUserIdx === -1) {
+      return NextResponse.json({ message: "Kako vam mogu pomoći?" });
+    }
+    const trimmed = allMsgs.slice(firstUserIdx);
+    const history = trimmed.slice(0, -1);
+    const lastMessage = trimmed[trimmed.length - 1].parts[0].text;
 
     const chat = model.startChat({ history });
     const result = await chat.sendMessage(lastMessage);
