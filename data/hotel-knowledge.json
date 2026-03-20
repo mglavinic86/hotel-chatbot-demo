@@ -1,41 +1,146 @@
 {
-  "hotel": {
-    "name": "Villa Neretvanka",
-    "type": "Boutique hotel",
-    "location": "Neretva valley, Croatia",
-    "rooms": {
-      "total": 12,
-      "types": [
-        { "name": "Standard", "price_eur": 80 },
-        { "name": "Superior", "price_eur": 120 },
-        { "name": "Deluxe", "price_eur": 160 },
-        { "name": "Suite", "price_eur": 220 }
-      ]
-    },
-    "amenities": [
-      "Breakfast included",
-      "Free parking",
-      "Free WiFi",
-      "Outdoor pool",
-      "Restaurant with local cuisine"
-    ],
-    "check_in": "14:00",
-    "check_out": "10:00",
-    "nearby": [
-      { "place": "Kravice Waterfalls", "distance": "30 min" },
-      { "place": "Mostar", "distance": "45 min" },
-      { "place": "Dubrovnik", "distance": "1.5 h" },
-      { "place": "Ston", "distance": "40 min" }
-    ],
+  "brand": {
+    "name": "Luxury Villas Dubrovnik",
+    "tagline": "Timeless, Beautiful, Authentic",
+    "owner": "Croatian-Belgian family (Ibervest Group)",
+    "website": "https://www.luxuryvillasdubrovnik.com",
     "contact": {
-      "phone": "+385 20 123 456",
-      "email": "info@villa-neretvanka.hr"
+      "phone": "+385 1 4623 515",
+      "mobile": "+385 99 4959 501",
+      "email": "villas@ibervest.hr",
+      "address": "Gračansko borje 24, 10000 Zagreb"
     },
-    "pet_policy": "Pet-friendly for small dogs up to 10kg",
-    "season": "June-September",
-    "preseason_discount": "20%"
+    "working_hours": "Monday-Friday 08:30-16:30",
+    "booking_url": "https://www.luxuryvillasdubrovnik.com/info-and-booking/"
   },
-  "booking": {
-    "url": "https://villa-neretvanka.hr/booking"
+  "villas": [
+    {
+      "name": "Villa Orti",
+      "location": "Old City of Dubrovnik",
+      "description": "A classic 19th century mansion nestled in historical gardens, just a short stroll from Dubrovnik's ancient Old City walls. Hidden from the public eye, it represents the ultimate intimate experience. Lovingly restored to combine high architectural standards of old masters with Scandinavian design functionality.",
+      "capacity": { "sleeps": 16, "bedrooms": 7, "bathrooms": 7 },
+      "price_from_eur": 1300,
+      "price_note": "From €1,300/night (seasonal pricing applies)",
+      "amenities": [
+        "Private swimming pool",
+        "Historical Mediterranean gardens with citrus trees",
+        "Fully staffed with housekeeping",
+        "Premium concierge service",
+        "Private chef available",
+        "Air conditioning throughout",
+        "Free WiFi",
+        "Luxury linens and toiletries",
+        "Wine cellar",
+        "BBQ area",
+        "Laundry service"
+      ],
+      "highlights": [
+        "5-minute walk to Old City walls",
+        "Green oasis hidden from public",
+        "Perfect for large family gatherings",
+        "Ideal for celebrations and events",
+        "Panoramic views of the Adriatic"
+      ],
+      "best_for": "Luxury city experience, large groups, family reunions, celebrations"
+    },
+    {
+      "name": "Ghetaldi 1516",
+      "location": "Suđurađ, Šipan Island",
+      "description": "One of the oldest Renaissance villas in the Dubrovnik region, originally constructed in 1516 as a summerhouse for the aristocratic Getaldić noble family. Gorgeously renovated with elements of gothic and renaissance architecture. Experience the delicate culture of living in harmony with the garden, fisherman's village, and medieval manors.",
+      "capacity": { "sleeps": 16, "bedrooms": 7, "bathrooms": 7 },
+      "price_from_eur": 1450,
+      "price_note": "From €1,450/night (seasonal pricing applies)",
+      "amenities": [
+        "Private swimming pool",
+        "Terraced grounds overlooking the sea",
+        "Fully staffed with housekeeping",
+        "Premium concierge service",
+        "Private chef available",
+        "Air conditioning",
+        "Free WiFi",
+        "Luxury amenities",
+        "Historic stone architecture",
+        "Mediterranean garden",
+        "Sea views to neighbouring islands"
+      ],
+      "highlights": [
+        "Built in 1516 — over 500 years of history",
+        "Authentic Renaissance architecture",
+        "Terraced grounds with panoramic sea views",
+        "Complete privacy on Šipan Island",
+        "Perfect escape from urban life"
+      ],
+      "best_for": "Heritage lovers, secluded getaway, couples, history enthusiasts"
+    },
+    {
+      "name": "Villa Ella",
+      "location": "Frajga, Šipan Island",
+      "description": "Located in the ancient and picturesque hamlet of Frajga, this authentic Dalmatian farmhouse has been luxuriously renovated. Drawing inspiration from sun, soil and sea, every room has a separate identity inspired by the rich variety of fruit in the villa's surroundings. An untouched piece of heaven — as close to a real-life garden of Eden as you can get.",
+      "capacity": { "sleeps": 10, "bedrooms": 5, "bathrooms": 5 },
+      "price_from_eur": 550,
+      "price_note": "From €550/night (seasonal pricing applies)",
+      "amenities": [
+        "Private swimming pool",
+        "Unspoilt Mediterranean flora surroundings",
+        "Fully staffed with housekeeping",
+        "Concierge service",
+        "Private chef available",
+        "Air conditioning",
+        "Free WiFi",
+        "Authentic Dalmatian interiors",
+        "Fruit gardens",
+        "Complete privacy"
+      ],
+      "highlights": [
+        "Authentic Dalmatian country house",
+        "Each room themed after local fruit varieties",
+        "Complete escape — untouched nature",
+        "Peaceful island atmosphere",
+        "Perfect for relaxation and disconnecting"
+      ],
+      "best_for": "Immersive relaxation, intimate groups, nature lovers, couples"
+    }
+  ],
+  "experiences": {
+    "yacht": {
+      "description": "Explore the stunning Croatian coastline and Elaphiti archipelago on our private motor yacht. Day trips or overnight adventures available.",
+      "options": ["Day trip along Elaphiti islands", "Sunset cruise", "Overnight yacht charter", "Custom itineraries"]
+    },
+    "concierge_services": [
+      "Luxury airport transfers (Dubrovnik/Čilipi)",
+      "Private chef and catering",
+      "Wine tasting experiences",
+      "Watersports and diving",
+      "Guided Old City walking tours",
+      "Island hopping excursions",
+      "Glamping experiences",
+      "Restaurant reservations at top Dubrovnik venues",
+      "Spa and wellness treatments",
+      "Game of Thrones filming locations tour",
+      "Cooking classes with local cuisine",
+      "Kayaking around city walls"
+    ]
+  },
+  "destination": {
+    "dubrovnik": {
+      "description": "The Pearl of the Adriatic — UNESCO World Heritage city with stunning medieval walls, baroque architecture and crystal-clear waters.",
+      "highlights": ["Old City walls walk", "Stradun promenade", "Cable car to Srđ hill", "Lokrum island", "Buža Beach Bar"],
+      "climate": "Mediterranean — 250+ sunny days per year, swimming season May-October",
+      "airport": "Dubrovnik Airport (DBV), 20km from city centre"
+    },
+    "sipan": {
+      "description": "The Golden Island — largest of the Elaphiti archipelago. Unspoilt nature, rustic villages, and peaceful atmosphere just 45 minutes by ferry from Dubrovnik.",
+      "getting_there": "Regular ferry from Dubrovnik port (45 min), or private boat transfer arranged by our team",
+      "villages": ["Suđurađ (Ghetaldi 1516)", "Frajga (Villa Ella)", "Šipanska Luka"]
+    }
+  },
+  "policies": {
+    "check_in": "Flexible — arranged with our team",
+    "check_out": "Flexible — arranged with our team",
+    "minimum_stay": "Typically 3-7 nights depending on season",
+    "pets": "Please inquire — evaluated on a case-by-case basis",
+    "children": "Welcome — cots and high chairs available",
+    "cancellation": "Please contact us for our cancellation policy",
+    "payment": "Bank transfer or credit card"
   }
 }

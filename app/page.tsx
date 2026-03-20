@@ -12,7 +12,7 @@ export default function Home() {
     {
       role: "assistant",
       content:
-        "Dobrodošli u Villa Neretvanka! 🌿 Ja sam vaš AI asistent. Kako vam mogu pomoći? Pitajte me o sobama, cijenama, lokaciji ili bilo čemu drugom.",
+        "Welcome to Luxury Villas Dubrovnik! ☀️ I'm your AI concierge. Whether you're dreaming of a city escape near Dubrovnik's Old City walls or a secluded island retreat on Šipan — I'm here to help you find the perfect villa. How may I assist you?",
     },
   ]);
   const [input, setInput] = useState("");
@@ -75,30 +75,29 @@ export default function Home() {
   return (
     <div className="flex flex-col h-screen max-w-2xl mx-auto">
       {/* Demo Banner */}
-      <div className="bg-emerald-600 text-white text-center py-1.5 text-xs font-medium tracking-wide">
-        🎯 DEMO —{" "}
+      <div className="bg-amber-700 text-white text-center py-1.5 text-xs font-medium tracking-wide">
+        ✨ AI CONCIERGE DEMO —{" "}
         <a
           href="https://siriusgrupa.com"
           target="_blank"
-          className="underline hover:text-emerald-200"
+          className="underline hover:text-amber-200"
         >
-          Sirius Grupa AI
-        </a>{" "}
-        — AI asistent za vaš hotel
+          Powered by Sirius AI
+        </a>
       </div>
 
       {/* Header */}
-      <div className="bg-white border-b px-4 py-4 flex items-center gap-3 shadow-sm">
-        <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-xl">
-          🏨
+      <div className="bg-stone-900 px-4 py-4 flex items-center gap-3 shadow-sm">
+        <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-xl">
+          🏛️
         </div>
         <div>
-          <h1 className="font-semibold text-stone-800 text-lg">
-            Villa Neretvanka
+          <h1 className="font-semibold text-amber-50 text-lg">
+            Luxury Villas Dubrovnik
           </h1>
-          <p className="text-xs text-emerald-600 flex items-center gap-1">
-            <span className="w-2 h-2 bg-emerald-500 rounded-full inline-block animate-pulse"></span>
-            AI Concierge — Online 24/7
+          <p className="text-xs text-amber-400 flex items-center gap-1">
+            <span className="w-2 h-2 bg-amber-400 rounded-full inline-block animate-pulse"></span>
+            AI Concierge — Available 24/7
           </p>
         </div>
       </div>
@@ -113,7 +112,7 @@ export default function Home() {
             <div
               className={`max-w-[85%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
                 msg.role === "user"
-                  ? "bg-emerald-600 text-white rounded-br-md"
+                  ? "bg-amber-700 text-white rounded-br-md"
                   : "bg-white text-stone-700 border border-stone-200 rounded-bl-md shadow-sm"
               }`}
             >
@@ -141,14 +140,14 @@ export default function Home() {
       <div className="bg-white border-t px-4 py-3">
         {msgCount >= 20 ? (
           <p className="text-center text-sm text-stone-500">
-            Demo limit dosegnut (20 poruka).{" "}
+            Demo limit reached (20 messages).{" "}
             <a
               href="https://siriusgrupa.com"
-              className="text-emerald-600 underline"
+              className="text-amber-700 underline"
             >
-              Kontaktirajte nas
+              Contact us
             </a>{" "}
-            za punu verziju.
+            for the full version.
           </p>
         ) : (
           <form
@@ -163,13 +162,13 @@ export default function Home() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Upišite poruku..."
-              className="flex-1 border border-stone-300 rounded-full px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+              className="flex-1 border border-stone-300 rounded-full px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
               disabled={loading}
             />
             <button
               type="submit"
               disabled={loading || !input.trim()}
-              className="bg-emerald-600 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="bg-amber-700 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-amber-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
